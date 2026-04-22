@@ -1,18 +1,20 @@
-// cypress/e2e/auth/login.cy.js
-const { LoginPage } = require('../support/pages/loginPage');
+const { CadastroPage } = require('../support/pages/cadastroPage');
 const { gerarUsuario } = require('../support/helpers/userHelper');
 
-const loginPage = new LoginPage();
+const cadastroPage = new CadastroPage();
 const user = gerarUsuario();
 
-describe('Cenario de Login', () => {
+describe('Cenario de Cadastro', () => {
 
   beforeEach(() => {
-    loginPage.visit();
+    cadastroPage.visit();
   });
 
-  it('Devera logar com credenciais válidas', () => {
-   loginPage.btnRegistrar()
-   loginPage.preencherAsCredenciais(user.firstName, user.lastName, user.street, user.city, user.state, user.zipCode, user.phone, '123')
+  it('Devera cadastrar com credenciais válidas', () => {
+   cadastroPage.btnRegistrar()
+   cadastroPage.preencherAsCredenciais(user.firstName, user.lastName, user.street, user.city, user.state, user.zipCode,
+    user.phone, '123', user.fullName, user.password, user.password)
+   cadastroPage.btnCadastrar()
+   cadastroPage.validarUsuarioCriado(user.fullName)
   });
 });
