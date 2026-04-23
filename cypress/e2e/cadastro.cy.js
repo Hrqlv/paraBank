@@ -1,14 +1,16 @@
 const { CadastroPage } = require('../support/pages/cadastroPage');
+const { BasePage } = require('../support/pages/basePage')
 const { gerarUsuario } = require('../support/helpers/userHelper');
 
 const cadastroPage = new CadastroPage();
+const basePage = new BasePage()
 let user
 
 describe('Cenario de Cadastro', () => {
 
   beforeEach(() => {
     user = gerarUsuario();
-    cadastroPage.visit();
+    basePage.visit();
   });
 
   it('[Cenario 1] Cadastro com dados válidos', () => {
