@@ -4,10 +4,6 @@ class CadastroPage {
       this.locatorErro = 'span[class="error"]';
     }
 
-  visit() {
-    cy.visit('/parabank/lookup.htm');
-  }
-
   btnRegistrar() {
     cy.contains('Register').click()
   }
