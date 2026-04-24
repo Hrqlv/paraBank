@@ -9,8 +9,8 @@ class LoginPage {
     }
 
     preencherAsCredenciais(username = '', senha = '') {
-        cy.get('[name="username"]').type(username)
-        cy.get('[name="password"]').type(senha)
+        cy.get('[name="username"]').should('be.visible').type(username)
+        cy.get('[name="password"]').should('be.visible').type(senha)
     }
 
     validarMensagemCamposObrigatorios() {

@@ -1,6 +1,6 @@
-const { LoginPage } = require('../support/pages/loginPage');
-const { BasePage } = require('../support/pages/basePage')
-const { usuario } = require('../fixtures/data')
+const { LoginPage } = require('../pages/login.page');
+const { BasePage } = require('../pages/base.page')
+const { usuario } = require('../../fixtures/data')
 
 const loginPage = new LoginPage();
 const basePage = new BasePage()

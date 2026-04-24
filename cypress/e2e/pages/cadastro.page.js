@@ -13,17 +13,17 @@ class CadastroPage {
   }
   
   preencherAsCredenciais(primeiroNome = '', sobreNome = '', endereco = '', cidade = '', estado = '', cep = '', phone = '', numSeguranca = '', nomeCompleto = '', senha = '', confirmarSenha = '') {
-    cy.get('[name="customer.firstName"]').type(primeiroNome)
-    cy.get('[name="customer.lastName"]').type(sobreNome)
-    cy.get('[name="customer.address.street"]').type(endereco)
-    cy.get('[name="customer.address.city"]').type(cidade)
-    cy.get('[name="customer.address.state"]').type(estado)
-    cy.get('[name="customer.address.zipCode"]').type(cep)
-    cy.get('[name="customer.phoneNumber"]').type(phone)
-    cy.get('[name="customer.ssn"]').type(numSeguranca)
-    cy.get('[name="customer.username"]').type(nomeCompleto)
-    cy.get('[name="customer.password"]').type(senha)
-    cy.get('[name="repeatedPassword"]').type(confirmarSenha)
+    cy.get('[name="customer.firstName"]').should('be.visible').type(primeiroNome)
+    cy.get('[name="customer.lastName"]').should('be.visible').type(sobreNome)
+    cy.get('[name="customer.address.street"]').should('be.visible').type(endereco)
+    cy.get('[name="customer.address.city"]').should('be.visible').type(cidade)
+    cy.get('[name="customer.address.state"]').should('be.visible').type(estado)
+    cy.get('[name="customer.address.zipCode"]').should('be.visible').type(cep)
+    cy.get('[name="customer.phoneNumber"]').should('be.visible').type(phone)
+    cy.get('[name="customer.ssn"]').should('be.visible').type(numSeguranca)
+    cy.get('[name="customer.username"]').should('be.visible').type(nomeCompleto)
+    cy.get('[name="customer.password"]').should('be.visible').type(senha)
+    cy.get('[name="repeatedPassword"]').should('be.visible').type(confirmarSenha)
   }
 
   validarUsuarioCriado(nomeCompleto = '') {
