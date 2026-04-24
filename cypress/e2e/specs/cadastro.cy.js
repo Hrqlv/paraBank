@@ -1,6 +1,6 @@
 const { CadastroPage } = require('../pages/cadastro.page');
 const { BasePage } = require('../pages/base.page')
-const { gerarUsuario } = require('../../helpers/userHelper');
+const { gerarUsuario } = require('../../helpers/criarUsuario');
 
 const cadastroPage = new CadastroPage();
 const basePage = new BasePage()
